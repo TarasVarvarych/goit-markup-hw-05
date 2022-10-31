@@ -21,6 +21,7 @@
     --works-section-overlay:  rgba(47, 48, 58, 0.8);
     --transition-cubic: cubic-bezier(0.4, 0, 0.2, 1);
     --backdrop-color: rgba(0, 0, 0, 0.2);
+    --icon-color: #AFB1B8;
 }
 
 *,
@@ -69,9 +70,9 @@ h1, h2, h3, p {
 }
 
 a {
-    font-style: normal;
     text-decoration: none;
-    }
+    font-style: normal;
+}
 
 
 /* HEADER */
@@ -89,10 +90,7 @@ color: var(--black-color);
 
 .logo span {color: var(--brand-color)}
 
-.link,
-.address {text-decoration: none;
-font-style: normal;
-}
+
 
 .nav {
  
@@ -106,7 +104,6 @@ color: var(--title-color);
     color: var(--text-color);
     line-height: 1.14;
     font-weight: 500;
-    align-items: center;
     display: flex;
 }
 
@@ -145,28 +142,17 @@ margin-left:0;
    margin-right: 93px;
 }
 
-.contact-list > .item svg {
-    margin-right: 10px;   
-}
-
-.contact-list .link {
+ .link.contact {
     align-items: center;
 }
 
-.contact .icon {
-    fill: var(--text-color);
-}
-
-.icon {
-    fill: var(--clients-border);
-    transition: fill 250ms var(--transition-cubic);
+.contact-icon {
+    fill: currentColor;
+    margin-right: 10px;   
 
 }
 
-.contact:hover .icon,
-.contact:focus .icon  {
-    fill: var(--brand-color);
-}
+
 
 
 
@@ -196,7 +182,7 @@ margin-left:0;
     bottom: 0;
     background-color: var(--brand-color);
     border-radius: 2px;
-   
+   transform: translateY(1px);
 }
 
 
@@ -223,11 +209,11 @@ margin-left:0;
 .hero-title {
     color: var(--white-color);
     font-weight: 900;
-font-size: 44px;
-line-height: 1.36;
-letter-spacing: 0.06em;
-text-transform: uppercase;
-margin-bottom: var(--card-gap);
+    font-size: 44px;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: var(--card-gap);
 }
 
 .hero-button {
@@ -235,16 +221,16 @@ margin-bottom: var(--card-gap);
     color: var(--white-color);
     background-color: var(--brand-color);
     font-weight: 700;
-font-size: 16px;
-line-height: 1.87;
-text-align: center;
-letter-spacing: 0.06em;
-cursor: pointer;
-box-shadow: var(--hero-button-shadow);
-border-radius: 4px;
-border-color:transparent;
-padding: 10px 32px;
-transition: background-color 250ms var(--transition-cubic);
+    font-size: 16px;
+    line-height: 1.87;
+    text-align: center;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    box-shadow: var(--hero-button-shadow);
+    border-radius: 4px;
+    border-color:transparent;
+    padding: 10px 32px;
+    transition: background-color 250ms var(--transition-cubic);
 }
 
 .hero-button:hover,
@@ -262,9 +248,9 @@ transition: background-color 250ms var(--transition-cubic);
     color: var(--title-color);
     font-size: inherit;
     font-weight: 700;
-line-height: 1.14;
-text-transform: uppercase;
-margin-bottom: 10px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 
 }
 
@@ -292,10 +278,10 @@ margin-bottom: 10px;
 .text {
 
     font-size: 14px;
-line-height: 1.71;
-letter-spacing: 0.03em;
-margin-bottom: 0;
-margin-top: 0;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    margin-bottom: 0;
+    margin-top: 0;
 
 }
 
@@ -410,26 +396,29 @@ margin-top: 0;
     margin-right: 10px;
 }
 
-.socials > .item .link {
+.socials-link {
     display: flex;
     width: 44px;
     height: 44px;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    transition: background-color 250ms var(--transition-cubic),
-    border-radius 250ms var(--transition-cubic);
+    transition: background-color 250ms var(--transition-cubic);
+    color: var(--icon-color);
 }
 
-.socials > .item .link:hover .icon,
-.socials > .item .link:focus .icon {
+.socials-icon {
+    fill: currentColor;
+}
+
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon {
     fill: var(--white-color);
 }
 
-.socials > .item .link:hover,
-.socials > .item .link:focus {
+.socials-link:hover,
+.socials-link:focus {
     background-color: var(--brand-color);
-    border-radius: 50%;
 }
 
 
@@ -444,26 +433,30 @@ margin-top: 0;
     flex-basis:calc((100% - 150px) / 6);
 }
 
-.clients > .item .link {
+
+.clients-link {
     display: block;
     padding: 16px 32px;
     border: 1px solid;
-    border-color: var(--clients-border);
+    border-color: inherit;
     border-radius: 4px;
     width: 170px;
     height: 92px;
-    transition: border-color 250ms var(--transition-cubic);
+    transition: color 250ms var(--transition-cubic);
+    color: var(--icon-color);
 }
 
-.clients > .item .link:hover,
-.clients > .item .link:focus {
+.clients-icon {
+    fill: currentColor;
+}
+
+
+.clients-link:hover,
+.clients-link:focus  {
+    color: var(--brand-color);
     border-color: var(--brand-color);
 }
 
-.clients > .item .link:hover .icon,
-.clients > .item .link:focus .icon {
-    fill: var(--brand-color);
-}
 
 
 /* ФУТЕР */
@@ -563,18 +556,18 @@ address {
     
     font-family: inherit;
     font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 1.63;
-letter-spacing: 0.03em;
-text-align: center;
-color: var(--title-color);
-background-color: var(--section-color);
-cursor: pointer; 
-border-radius: 4px;
-border-color: transparent;
-padding: 6px 22px;
-transition: 
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.63;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color: var(--title-color);
+    background-color: var(--section-color);
+    cursor: pointer; 
+    border-radius: 4px;
+    border-color: transparent;
+    padding: 6px 22px;
+    transition: 
     color 250ms var(--transition-cubic),
     background-color 250ms var(--transition-cubic),
     box-shadow 250ms var(--transition-cubic);
