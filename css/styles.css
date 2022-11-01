@@ -403,7 +403,7 @@ margin-left:0;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    transition: background-color 250ms var(--transition-cubic);
+    transition: background-color 250ms var(--transition-cubic), color 250ms var(--transition-cubic);
     color: var(--icon-color);
 }
 
@@ -411,14 +411,11 @@ margin-left:0;
     fill: currentColor;
 }
 
-.socials-link:hover .socials-icon,
-.socials-link:focus .socials-icon {
-    fill: var(--white-color);
-}
 
 .socials-link:hover,
 .socials-link:focus {
     background-color: var(--brand-color);
+    color: var(--white-color);
 }
 
 
@@ -442,7 +439,7 @@ margin-left:0;
     border-radius: 4px;
     width: 170px;
     height: 92px;
-    transition: color 250ms var(--transition-cubic);
+    transition: color 250ms var(--transition-cubic), border-color 250ms var(--transition-cubic);
     color: var(--icon-color);
 }
 
